@@ -232,13 +232,10 @@ Or you can use the symbol syntax:
 books_by_genre[:pulp]
 ```
 
-## Some hash iterators
+##.merge Method
+- Merge allows you to add keys with values to hashes.
+- Merge is especially used to add parameters to hashes that come from form data in web applications.
 
-### Exercise: Let's output our hash with `.each`
-#### Questions: Look it up, can you pass just the element to `.each`? What are the two parameters that you can pass to the block? What happens if you just pass one?
-
-### Exercise: Map `books_by_genre` to an array of mini-hashes, where each mini-hash in the array contains something like: 
-
-```ruby
-[{ "pulp" => 3}, { "scifi" => 10 }, ... ]
+```
+book_by_genre.merge(action: 2)
 ```
