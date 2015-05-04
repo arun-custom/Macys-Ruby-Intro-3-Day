@@ -147,7 +147,7 @@ cust2.display_details()
 - These variables don't need to be inside of any method to be used within a class.
 - Class variables are shared among descendants of the class or module in which the class variables are defined.
 
-```
+```ruby
 class Customer
 	@@no_of_customers=0
 	
