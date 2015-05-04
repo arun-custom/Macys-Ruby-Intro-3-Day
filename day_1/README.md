@@ -374,13 +374,13 @@ books_by_genre.pulp
 
 - To Access hash values you can either use the bracket with a string syntax like this:
 
-```
+```ruby
 books_by_genre["pulp"]
 ```
 
 Or you can use the symbol syntax:
 
-```
+```ruby
 books_by_genre[:pulp]
 ```
 
@@ -388,14 +388,14 @@ books_by_genre[:pulp]
 - Merge allows you to add keys with values to hashes.
 - Merge is especially used to add parameters to hashes that come from form data in web applications.
 
-```
+```ruby
 book_by_genre.merge(action: 2)
 ```
 ##Arrays
 
 There are several ways to create an array:
 
-```
+```ruby
 arr = [1,2,3]
 => [1,2,3]
 arr1 = Array.new([4,5,6])
@@ -407,7 +407,7 @@ arr2 = Array.new(3, true)
 
 Ranges are sets of values with a beginning and an end:
 
-```
+```ruby
 aRange = (1..10) # includes 10
 anotherRange = (1...10) # not including 10
 lettersWorkToo = ('a'..'z')
@@ -415,7 +415,7 @@ lettersWorkToo = ('a'..'z')
 
 Ranges are often seen in conjunction with the FOR loop:
 
-```
+```ruby
 for i in 1..20
 	puts i
 end
@@ -423,7 +423,7 @@ end
 
 You can also do this for arrays like we did with JavaScript:
 
-```
+```ruby
 for i in 0...array.length
 	puts array[i]
 end
@@ -435,7 +435,7 @@ end
 - This is likely to be the most common iterator you see.
 - It is similar to the forEach loop in JS.
 
-```
+```ruby
 [1, 2, 3, 4].each do |item|
 	puts item
 end
@@ -444,14 +444,14 @@ end
 - We will see each index in the console as the iterator works its way through the data.
 - Arrays are the most common objects that we usually iterate over, but in Ruby there are multiple ways of defining sets of data.
 
-```
+```ruby
 %w(1, 2, 3, 4) #["1", "2", "3", "4"]
 ```
 
 ####.each_with_index
 - This is a variant on `.each`, and it allows you to pass the current index into the block:
 
-```
+```ruby
 [1, 2, 3, 4].each_with_index do |number, index|
 	puts index
 end
@@ -461,7 +461,7 @@ end
 - Reduce takes a collection of data and "reduces" it to a single value.
 - An example of why you would use this may be to sum the values of an array.
 
-```
+```ruby
 [1, 2, 3].reduce { |sum, el|
 	sum + el
 }
@@ -470,7 +470,7 @@ end
 ####.map
 - Map will run an operation for every index of an array.
 
-```
+```ruby
 [1, 2, 3, 4].map { |element|
 	element + 1
 }
@@ -479,7 +479,7 @@ end
 - Often times you will also want the index to use inside of the block.
 - This can be accomplished with the `map.with_index` method.
 
-```
+```ruby
 [1, 2, 3, 4].map.with_index { |element, index|
 	element + index
 }
@@ -487,7 +487,7 @@ end
 
 - `.map` can also be a "mutator" method by calling it with a bang - `.map!`. Using this notation will permanently change the original array.
 
-```
+```ruby
 [1, 2, 3, 4].map!.with_index { |element, index|
 	element + index
 }
@@ -500,7 +500,7 @@ end
 ####.shift
 - `.shift` will remove the first element of the array and return it.
 
-```
+```ruby
 my_array = [1, 2, 3, 4]
 
 my_array.shift # => 1
@@ -509,7 +509,7 @@ my_array.shift # => 1
 ####.unshift
 - `.unshift` will prepend objects to the front of the array, moving other elements upward.
 
-```
+```ruby
 my_array = ["a", "b", "c"]
 
 my_array.unshift("insert") # => ["insert", "a", "b", "c"]
@@ -518,7 +518,7 @@ my_array.unshift("insert") # => ["insert", "a", "b", "c"]
 ####.take
 - `.take` will return the first `n` elements of an array.
 
-```
+```ruby
 my_array = [1, 2, 3, 4]
 
 my_array.take(3) # => [1, 2, 3]
@@ -527,7 +527,7 @@ my_array.take(3) # => [1, 2, 3]
 ####.push
 - `.push` will append an object to the end of an array.
 
-```
+```ruby
 my_array = [1, 2, 3, 4]
 
 my_array.push(5) # => [1, 2, 3, 4, 5]
@@ -536,7 +536,7 @@ my_array.push(5) # => [1, 2, 3, 4, 5]
 ####.pop
 - `.pop` will remove the last element of the array and return it.
 
-```
+```ruby
 my_array = [1, 2, 3, 4]
 
 my_array.pop # => [1, 2, 3]
@@ -545,7 +545,7 @@ my_array.pop # => [1, 2, 3]
 ####.sort
 - `.sort` will compare items in the array and sort them using the <=> operator.
 
-```
+```ruby
 my_array = [1, 4, 2, 3]
 
 my_array.sort # => [1, 2, 3, 4]
