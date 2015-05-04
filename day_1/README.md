@@ -9,7 +9,7 @@
 
 Let's take a look at some examples:
 
-```
+```ruby
 puts "Arun Sood".length
 puts "Arun".index("A")
 puts 35.even?
@@ -17,7 +17,7 @@ puts 35.even?
 
 - We can tell that everything is an object, because everything has a "class":
 
-```
+```ruby
 "Arun Sood".class #String
 4.class #Fixnum
 [].class #Array
@@ -30,13 +30,13 @@ Object.class #Class
 
 ####JS
 
-```
+```ruby
 console.log("Hello " + 4 + 2); //Hello 42
 ```
 
 ####Ruby
 
-```
+```ruby
 puts "Hello " + 4 + 2 #no implicit conversion of Fixnum into String
 ```
 
@@ -47,7 +47,7 @@ puts "Hello " + 4 + 2 #no implicit conversion of Fixnum into String
 - Usually used for containing a bunch of "helper" functions that you can call throughout your program.
 - Great example is the [Math module](http://www.ruby-doc.org/core-2.1.4/Math.html) built into Ruby:
 
-```
+```ruby
 Math.sqrt(9) #3.0
 ```
 
@@ -57,7 +57,7 @@ Math.sqrt(9) #3.0
 - Instead of prototypes in JS that relate to some object, we have classes that encapsulate methods.
 - Classes can also inherit from other classes - this is called extension. We will get to this later.
 
-```
+```ruby
 class Car
 	def initialize(color, make, model)
 		@color = color
@@ -109,8 +109,62 @@ message = gets.chomp
 - Bonus: As a bonus you can create a simple `if else` statement that will choose which method to pick based on a third `gets` input. We will talk about this in the afternoon so you will have to look this up.
 - Bonus 2: Create another method that uses one of the Math constants in your operation.
 
-## Hashes
+##Modules
+- Let's take a deeper look into modules.
+- Modules are pieces of code that are to be used like utilities throughout your application.
+- Once they are defined they usually have constants and methods inside of them:
 
+```ruby
+module Week
+	FIRST_DAY = "Sunday"
+	
+	def Week.weeks_in_month
+		puts "You have four weeks in a month"
+	end
+	
+	def Week.weeks_in_year
+		puts "You have 52 weeks in a year"
+	end
+end
+```
+- FIRST_DAY is a constant, which is basically a value we can use in our application.
+- Each of the methods are accessible only inside of the module.
+
+##Require in Ruby
+- In order to use modules in your application code you will have to require them in your file.
+
+```ruby
+require "week"
+
+puts Week::FIRST_DAY
+
+Week.weeks_in_month
+```
+
+##Module Scope
+- When it comes to modules, variables and methods have the scope of the containing module.
+- When defining methods you can refer to the current module via the keyword `self`.
+
+```ruby
+module Week
+	FIRST_DAY = "Sunday"
+	
+	def self.weeks_in_month
+		puts "You have four weeks in a month"
+	end
+	
+	def self.weeks_in_year
+		puts "You have 52 weeks in a year"
+	end
+end
+```
+
+##Module Exercise
+- We will practice our modules by refactoring our current code for the string converter and the calculator exercises.
+- Try to move the main logic of the application into modules for each of these exercises and require them in a master Ruby file.
+- Call each of the methods defined in your new modules.
+
+##Hashes
 - Hashes are just a key-value data structure.
 - Let's make one:
 
