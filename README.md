@@ -7,3 +7,5 @@
 - Modules
 - Hashes
 - Method types
+- Arrays
+- Iterators
