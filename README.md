@@ -9,3 +9,13 @@
 - Method types
 - Arrays
 - Iterators
+
+###[Day 2](day_2/)
+- Array methods
+- Control flow
+- Loops
+- Iterators
+- Class inheritance
+- HTTP requests with HTTParty
+- JSON.parse
+- Lab time
