@@ -445,7 +445,7 @@ end
 - Arrays are the most common objects that we usually iterate over, but in Ruby there are multiple ways of defining sets of data.
 
 ```ruby
-%w(1, 2, 3, 4) #["1", "2", "3", "4"]
+%w(1 2 3 4) #["1", "2", "3", "4"]
 ```
 
 ####.each_with_index
@@ -492,71 +492,3 @@ end
 	element + index
 }
 ```
-##In-Class Lab #1
-- Go through the arrays section of RubyMonk [here](https://rubymonk.com/learning/books/1-ruby-primer/chapters/1-arrays/).
-
-##Array Methods
-
-####.shift
-- `.shift` will remove the first element of the array and return it.
-
-```ruby
-my_array = [1, 2, 3, 4]
-
-my_array.shift # => 1
-```
-
-####.unshift
-- `.unshift` will prepend objects to the front of the array, moving other elements upward.
-
-```ruby
-my_array = ["a", "b", "c"]
-
-my_array.unshift("insert") # => ["insert", "a", "b", "c"]
-```
-
-####.take
-- `.take` will return the first `n` elements of an array.
-
-```ruby
-my_array = [1, 2, 3, 4]
-
-my_array.take(3) # => [1, 2, 3]
-```
-
-####.push
-- `.push` will append an object to the end of an array.
-
-```ruby
-my_array = [1, 2, 3, 4]
-
-my_array.push(5) # => [1, 2, 3, 4, 5]
-```
-
-####.pop
-- `.pop` will remove the last element of the array and return it.
-
-```ruby
-my_array = [1, 2, 3, 4]
-
-my_array.pop # => [1, 2, 3]
-```
-
-####.sort
-- `.sort` will compare items in the array and sort them using the <=> operator.
-
-```ruby
-my_array = [1, 4, 2, 3]
-
-my_array.sort # => [1, 2, 3, 4]
-```
-
-##Array Exercise
-- Open the RubyMonk [array tutorial](https://rubymonk.com/learning/books/1-ruby-primer).
-- Try these problems:
-	- Find the length of strings in an array
-	- Find the frequency of a string in a sentence
-	- Select random elements from an array
-	- Find non-duplicate values in an array
-	- Check if all elements in an array are Fixnum
-- Bonus: Try the "sort the words in a given sentence" challenge.
